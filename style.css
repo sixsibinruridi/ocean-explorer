@@ -1,0 +1,512 @@
+/* ==============================
+   GENERAL
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 18, 42, 0.72) 0%,
+            rgba(1, 10, 26, 0.88) 50%,
+            rgba(1, 5, 15, 0.96) 100%
+        ),
+        url("ocean-background.jpg"),
+        radial-gradient(circle at 20% 20%, #063966 0%, #021024 60%, #010612 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    background: rgba(2, 15, 35, 0.65);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #6ee7ff;
+}
+
+
+/* ==============================
+   HERO & PAGE HEADERS
+============================== */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    position: relative;
+    z-index: 2;
+}
+
+.page-header {
+    padding: 90px 8% 20px;
+    max-width: 1050px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title,
+.section-label {
+    color: #72e6ff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    line-height: 0.9;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 30px rgba(70, 220, 255, 0.3);
+}
+
+.page-header h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    letter-spacing: -2px;
+}
+
+h1 span {
+    color: #6ee7ff;
+}
+
+.description {
+    max-width: 580px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d7edf5;
+    margin-bottom: 35px;
+}
+
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.explore-button {
+    display: inline-block;
+    padding: 15px 28px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.explore-button:hover {
+    background: rgba(80, 210, 255, 0.2);
+    border-color: #6ee7ff;
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(70, 220, 255, 0.3);
+}
+
+.page-nav-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* ==============================
+   GLASS PANELS & LISTS
+============================== */
+
+.intro {
+    padding: 60px 8% 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.glass-panel {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.glass-panel h2 {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.glass-panel p:not(.section-label) {
+    color: #d6eaf0;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.ocean-list {
+    margin: 25px 0 30px 22px;
+    color: #d6eaf0;
+    line-height: 1.8;
+}
+
+.ocean-list li {
+    margin-bottom: 12px;
+}
+
+.ocean-list strong {
+    color: #6ee7ff;
+}
+
+.content-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 20px;
+    border: 1px solid rgba(110, 231, 255, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ==============================
+   EMBEDDED VIDEO (BONUS)
+============================== */
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-top: 20px;
+    border: 1px solid rgba(110, 231, 255, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* ==============================
+   EXPLORE SECTION & CARDS
+============================== */
+
+.explore {
+    padding: 60px 8% 80px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.explore h2 {
+    font-size: 3rem;
+    margin-bottom: 45px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.ocean-card {
+    width: 300px;
+    padding: 35px 30px;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.ocean-card:hover {
+    transform: translateY(-12px);
+    background: rgba(70, 210, 255, 0.12);
+    border-color: rgba(100, 230, 255, 0.6);
+    box-shadow: 0 15px 40px rgba(0, 180, 255, 0.15);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    filter: drop-shadow(0 0 12px rgba(110, 231, 255, 0.35));
+}
+
+.ocean-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.ocean-card p {
+    color: #c9e5ed;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.ocean-card span {
+    color: #6ee7ff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* ==============================
+   FACT
+============================== */
+
+.fact-section {
+    padding: 60px 8% 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.fact-card {
+    max-width: 950px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 45px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 150, 200, 0.15),
+            rgba(255, 255, 255, 0.05)
+        );
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(100, 220, 255, 0.25);
+    border-radius: 25px;
+}
+
+.fact-number {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #6ee7ff;
+    text-shadow: 0 0 30px rgba(70, 220, 255, 0.4);
+}
+
+.fact-card h2 {
+    margin-bottom: 12px;
+}
+
+.fact-card p:not(.section-label) {
+    color: #c9e5ed;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   BUBBLES
+============================== */
+
+.bubbles span {
+    position: fixed;
+    bottom: -50px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), transparent);
+    border-radius: 50%;
+    animation: bubble 12s infinite ease-in;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bubbles span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.bubbles span:nth-child(2) { left: 25%; animation-delay: 3s; width: 10px; height: 10px; }
+.bubbles span:nth-child(3) { left: 40%; animation-delay: 6s; }
+.bubbles span:nth-child(4) { left: 60%; animation-delay: 2s; width: 20px; height: 20px; }
+.bubbles span:nth-child(5) { left: 75%; animation-delay: 5s; }
+.bubbles span:nth-child(6) { left: 85%; animation-delay: 8s; width: 8px; height: 8px; }
+.bubbles span:nth-child(7) { left: 50%; animation-delay: 10s; width: 12px; height: 12px; }
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-55vh) translateX(15px);
+    }
+    100% {
+        transform: translateY(-110vh) translateX(-10px);
+        opacity: 0;
+    }
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 5, 15, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: #a9cbd3;
+}
+
+.sources {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.sources a {
+    color: #6ee7ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.sources a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    margin-top: 25px;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero,
+    .page-header {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        letter-spacing: -2px;
+    }
+
+    .glass-panel {
+        padding: 30px 25px;
+    }
+
+    .fact-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .fact-number {
+        font-size: 4rem;
+    }
+}
